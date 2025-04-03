@@ -25,6 +25,12 @@ const tagLine = document.querySelector('#banner p');
 
 let currentSlide = 0;
 
+slides.forEach((slide,index) => {
+	const dot = document.createElement('div');
+	dot.classList.add('dot');
+	dotsContainer.appendChild(dot);
+});
+
 function displaySlide(index) {
 	bannerImg.src = `./assets/images/slideshow/${slides[index].image}`;
 	tagLine.innerHTML = slides[index].tagLine;
