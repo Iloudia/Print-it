@@ -30,6 +30,14 @@ slides.forEach((slide,index) => {
 	dot.classList.add('dot');
 	dotsContainer.appendChild(dot);
 });
+const dots = document.querySelectorAll('.dot');
+
+dots.forEach((dot,index) => {
+	dot.addEventListener('click', () => {
+		currentSlide = index;
+		displaySlide(currentSlide);
+	});
+});
 
 function displaySlide(index) {
 	bannerImg.src = `./assets/images/slideshow/${slides[index].image}`;
@@ -37,5 +45,6 @@ function displaySlide(index) {
 	document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('dot_selected'));
 	dots[index].classList.add('dot_selected');
   }
+
 
 
