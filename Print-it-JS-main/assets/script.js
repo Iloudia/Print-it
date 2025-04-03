@@ -15,4 +15,12 @@ const slides = [
 		"image":"slide4.png",
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
-]
+];
+
+const bannerImg = document.querySelector('.banner-img');
+const leftArrow = document.querySelector('.arrow__left');
+const rightArrow = document.querySelector('.arrow__right');
+const dotsContainer = document.querySelectorAll('.dots');
+const tagLine = document.querySelectorAll('#banner p');
+
+
