@@ -20,7 +20,16 @@ const slides = [
 const bannerImg = document.querySelector('.banner-img');
 const leftArrow = document.querySelector('.arrow__left');
 const rightArrow = document.querySelector('.arrow__right');
-const dotsContainer = document.querySelectorAll('.dots');
-const tagLine = document.querySelectorAll('#banner p');
+const dotsContainer = document.querySelector('.dots');
+const tagLine = document.querySelector('#banner p');
+
+let currentSlide = 0;
+
+function displaySlide(index) {
+	bannerImg.src = `./assets/images/slideshow/${slides[index].image}`;
+	tagLine.innerHTML = slides[index].tagLine;
+	document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('dot_selected'));
+	dots[index].classList.add('dot_selected');
+  }
 
 
