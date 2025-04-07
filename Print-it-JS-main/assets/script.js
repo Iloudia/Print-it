@@ -46,5 +46,15 @@ function displaySlide(index) {
 	dots[index].classList.add('dot_selected');
   }
 
+leftArrow.addEventListener('click', () => {
+	currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1 ;
+	displaySlide(currentSlide);
+})
+
+rightArrow.addEventListener('click', () => {
+	currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1 ;
+	displaySlide(currentSlide);
+})
+
 
 
