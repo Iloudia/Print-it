@@ -56,5 +56,6 @@ rightArrow.addEventListener('click', () => {
 	displaySlide(currentSlide);
 })
 
+displaySlide(currentSlide);
 
 
