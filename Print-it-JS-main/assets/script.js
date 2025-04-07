@@ -25,7 +25,7 @@ const tagLine = document.querySelector('#banner p');
 
 let currentSlide = 0;
 
-slides.forEach((slide,index) => {
+slides.forEach(() => {
 	const dot = document.createElement('div');
 	dot.classList.add('dot');
 	dotsContainer.appendChild(dot);
@@ -42,20 +42,29 @@ dots.forEach((dot,index) => {
 function displaySlide(index) {
 	bannerImg.src = `./assets/images/slideshow/${slides[index].image}`;
 	tagLine.innerHTML = slides[index].tagLine;
-	document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('dot_selected'));
+	dots.forEach(dot => dot.classList.remove('dot_selected'));
 	dots[index].classList.add('dot_selected');
   }
 
 leftArrow.addEventListener('click', () => {
-	currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1 ;
+	if (currentSlide === 0) {
+		currentSlide = slides.length - 1;
+	} else {
+		currentSlide--;
+	}
 	displaySlide(currentSlide);
-})
+});
 
 rightArrow.addEventListener('click', () => {
-	currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1 ;
+	if (currentSlide === slides.length - 1) {
+		currentSlide = 0;
+	} else {
+		currentSlide++;
+	}
 	displaySlide(currentSlide);
-})
+});
 
 displaySlide(currentSlide);
+
 
 
