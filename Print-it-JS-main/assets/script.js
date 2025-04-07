@@ -18,8 +18,8 @@ const slides = [
 ];
 
 const bannerImg = document.querySelector('.banner-img');
-const leftArrow = document.querySelector('.arrow__left');
-const rightArrow = document.querySelector('.arrow__right');
+const leftArrow = document.querySelector('.arrow_left');
+const rightArrow = document.querySelector('.arrow_right');
 const dotsContainer = document.querySelector('.dots');
 const tagLine = document.querySelector('#banner p');
 
